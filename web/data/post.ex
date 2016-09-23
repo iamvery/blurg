@@ -11,4 +11,14 @@ defmodule Blurg.Data.Post do
       }
     end
   end
+
+  def build(%{params: %{"id" => id}} = conn, :show, _opts) do
+    post = Blurg.Repo.get!(Blurg.Post, id)
+    %{
+      title: post.title,
+      created_at: Timex.format!(post.inserted_at, "{relative}", :relative),
+      body: post.body,
+      edit_link: [href: post_path(conn, :edit, id)],
+    }
+  end
 end
