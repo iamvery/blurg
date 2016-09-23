@@ -1,7 +1,7 @@
 defmodule Blurg.PostController do
   use Blurg.Web, :controller
 
-  alias Blurg.Data
+  alias Blurg.{Data, Post}
 
   def index(conn, _params) do
     post = Data.Post.build(conn)
@@ -21,5 +21,11 @@ defmodule Blurg.PostController do
 
   def edit(conn, _params) do
     render(conn, "edit.html")
+  end
+
+  def delete(conn, %{"id" => id}) do
+    post = Repo.get!(Post, id)
+    Repo.delete!(post)
+    redirect(conn, to: post_path(conn, :index))
   end
 end
