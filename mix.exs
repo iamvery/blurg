@@ -38,6 +38,7 @@ defmodule Blurg.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:phoenix_ratchet, "~> 0.5"},
      {:gettext, "~> 0.11"},
+     {:timex, "~> 3.0"},
      {:cowboy, "~> 1.0"}]
   end
 
