@@ -19,6 +19,13 @@ defmodule Blurg.Data.Post do
       created_at: Timex.format!(post.inserted_at, "{relative}", :relative),
       body: post.body,
       edit_link: [href: post_path(conn, :edit, id)],
+      delete_form: {
+        %{
+          csrf: [name: "_csrf_token", value: Phoenix.Controller.get_csrf_token],
+          method: [name: "_method", value: "delete"],
+        },
+        [action: post_path(conn, :delete, id), method: "post"],
+      },
     }
   end
 end

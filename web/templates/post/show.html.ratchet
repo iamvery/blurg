@@ -55,7 +55,9 @@
     <a data-prop="edit_link" href="/posts/1/edit" class="btn btn-default">Edit</a>
     <a href="/posts" class="btn btn-default">Back to Posts</a>
   </div>
-  <form action="#">
-    <button type="submit" class="btn btn-danger">Delete</button>
+  <form data-prop="delete_form" action="#">
+    <input data-prop="csrf" type="hidden">
+    <input data-prop="method" type="hidden">
+    <button type="submit" data-confirm="Are you sure?" class="btn btn-danger">Delete</button>
   </form>
 </section>
