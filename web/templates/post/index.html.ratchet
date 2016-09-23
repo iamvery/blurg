@@ -1,16 +1,16 @@
 <h1>Posts</h1>
 
-<div class="panel panel-default">
+<div data-prop="post" class="panel panel-default">
   <div class="panel-body">
-    <span>Bears</span>
+    <span data-prop="title">Bears</span>
     &nbsp;
-    <span class="badge">10</span>
+    <span data-prop="comment_count" class="badge">10</span>
 
     <div class="btn-group pull-right">
-      <a href="/posts/1" class="btn btn-default btn-xs">Show</a>
-      <a href="/posts/1/edit" class="btn btn-default btn-xs">Edit</a>
+      <a data-prop="show_link" href="/posts/1" class="btn btn-default btn-xs">Show</a>
+      <a data-prop="edit_link" href="/posts/1/edit" class="btn btn-default btn-xs">Edit</a>
     </div>
   </div>
 </div>
 
-<a href="/posts/new" class="btn btn-primary">New Post</a>
+<a data-prop="new_post_link" href="/posts/new" class="btn btn-primary">New Post</a>
