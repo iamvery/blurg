@@ -1,8 +1,12 @@
 defmodule Blurg.PostController do
   use Blurg.Web, :controller
 
+  alias Blurg.Data
+
   def index(conn, _params) do
-    render(conn, "index.html")
+    post = Data.Post.build(conn)
+    data = %{post: post}
+    render(conn, "index.html", data: data)
   end
 
   def show(conn, _params) do
