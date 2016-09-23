@@ -1,0 +1,16 @@
+<h1>Posts</h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <span>Bears</span>
+    &nbsp;
+    <span class="badge">10</span>
+
+    <div class="btn-group pull-right">
+      <a href="/posts/1" class="btn btn-default btn-xs">Show</a>
+      <a href="/posts/1/edit" class="btn btn-default btn-xs">Edit</a>
+    </div>
+  </div>
+</div>
+
+<a href="/posts/new" class="btn btn-primary">New Post</a>
