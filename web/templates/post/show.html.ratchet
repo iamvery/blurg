@@ -1,9 +1,9 @@
-<section>
-  <h1>Bears</h1>
-  <h5>Posted <span>1 day ago</span></h5>
+<section data-prop="post">
+  <h1 data-prop="title">Bears</h1>
+  <h5>Posted <span data-prop="created_at">1 day ago</span></h5>
   <hr>
 
-  <div>
+  <div data-prop="body">
     <p>
       Bears eat <em>beats.</em>
       Bacon ipsum dolor amet kielbasa kevin turkey pig porchetta capicola t-bone. Hamburger cow pastrami, short loin tongue bresaola tenderloin filet mignon pork chop frankfurter capicola prosciutto. Ground round short ribs t-bone leberkas turkey, tongue drumstick pork loin swine andouille flank pork belly bacon ball tip. Capicola t-bone pork filet mignon cupim hamburger kevin pork loin chuck drumstick prosciutto cow boudin shoulder sirloin. Pastrami fatback beef ribs pancetta kevin. Alcatra pork cow landjaeger sirloin pork loin shoulder cupim kevin meatloaf tenderloin chuck. Landjaeger rump drumstick pig pastrami.
@@ -52,7 +52,7 @@
   </form>
 
   <div class="btn-group pull-right">
-    <a href="/posts/1/edit" class="btn btn-default">Edit</a>
+    <a data-prop="edit_link" href="/posts/1/edit" class="btn btn-default">Edit</a>
     <a href="/posts" class="btn btn-default">Back to Posts</a>
   </div>
   <form action="#">
