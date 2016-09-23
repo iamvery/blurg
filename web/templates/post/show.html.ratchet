@@ -1,0 +1,45 @@
+<section>
+  <h1>Bears</h1>
+  <h5>Posted <span>1 day ago</span></h5>
+  <div>
+    <p>
+      Bears eat <em>beats.</em>
+      Bacon ipsum dolor amet kielbasa kevin turkey pig porchetta capicola t-bone. Hamburger cow pastrami, short loin tongue bresaola tenderloin filet mignon pork chop frankfurter capicola prosciutto. Ground round short ribs t-bone leberkas turkey, tongue drumstick pork loin swine andouille flank pork belly bacon ball tip. Capicola t-bone pork filet mignon cupim hamburger kevin pork loin chuck drumstick prosciutto cow boudin shoulder sirloin. Pastrami fatback beef ribs pancetta kevin. Alcatra pork cow landjaeger sirloin pork loin shoulder cupim kevin meatloaf tenderloin chuck. Landjaeger rump drumstick pig pastrami.
+    </p>
+
+    <p>
+      Ham tenderloin pork chop drumstick leberkas swine turducken shoulder.
+      Frankfurter cupim sirloin, tenderloin swine short ribs turkey porchetta corned beef jowl.
+      Pork loin tail ham prosciutto.
+      Frankfurter biltong swine turducken.
+      Alcatra rump t-bone ham ribeye frankfurter doner swine pig strip steak meatball.
+    </p>
+
+    <p>
+      Ball tip kielbasa beef ribs corned beef, shank cupim ground round pig chuck porchetta ham hock tongue pancetta t-bone.
+      Turducken bacon doner pork chop, drumstick ball tip shoulder picanha porchetta spare ribs shank ham hock meatball pig capicola.
+      Drumstick pastrami spare ribs picanha biltong bacon cupim pancetta ham hock short ribs brisket ham strip steak pork belly chicken.
+      Venison cow jerky, cupim spare ribs ball tip flank beef ribs short ribs.
+      Prosciutto meatloaf kevin biltong turducken, shankle ball tip porchetta.
+    </p>
+  </div>
+
+  <hr>
+
+  <h3>Comments</h3>
+  <div class="well well-sm">
+    <div>
+      <span><strong>Jay</strong></span>
+      (<span>1 hour ago</span>)
+    </div>
+    <div>Did you mean beets?</div>
+  </div>
+
+  <div class="btn-group pull-right">
+    <a href="/posts/1/edit" class="btn btn-default">Edit</a>
+    <a href="/posts" class="btn btn-default">Back to Posts</a>
+  </div>
+  <form action="#">
+    <button type="submit" class="btn btn-danger">Delete</button>
+  </form>
+</section>

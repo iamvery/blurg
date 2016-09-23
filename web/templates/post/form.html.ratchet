@@ -1,0 +1,13 @@
+<form class="form" action="#">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" placeholder="Linkbait" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Body</label>
+    <textarea rows=10 placeholder="Thoughts and opinions" class="form-control"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-default">Save</button>
+</form>
