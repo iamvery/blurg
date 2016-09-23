@@ -10,7 +10,9 @@ defmodule Blurg.PostController do
   end
 
   def show(conn, _params) do
-    render(conn, "show.html")
+    post = Data.Post.build(conn)
+    data = %{post: post}
+    render(conn, "show.html", data: data)
   end
 
   def new(conn, _params) do
