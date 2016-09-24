@@ -19,8 +19,11 @@ defmodule Blurg.PostController do
     render(conn, "new.html")
   end
 
-  def edit(conn, _params) do
-    render(conn, "edit.html")
+  def edit(conn, %{"id" => id}) do
+    data = %{
+      post_link: [href: post_path(conn, :show, id)],
+    }
+    render(conn, "edit.html", data: data)
   end
 
   def delete(conn, %{"id" => id}) do
