@@ -1,12 +1,15 @@
-<form class="form" action="#">
+<form data-prop="post_form" class="form" action="#">
+  <input data-prop="csrf" type="hidden">
+  <input data-prop="method" type="hidden">
+
   <div class="form-group">
-    <label>Title</label>
-    <input type="text" placeholder="Linkbait" class="form-control">
+    <label for="post_title">Title</label>
+    <input data-prop="title" id="post_title" type="text" placeholder="Linkbait" class="form-control">
   </div>
 
   <div class="form-group">
-    <label>Body</label>
-    <textarea rows=10 placeholder="Thoughts and opinions" class="form-control"></textarea>
+    <label for="post_body">Body</label>
+    <textarea data-prop="body" id="post_body" rows=10 placeholder="Thoughts and opinions" class="form-control"></textarea>
   </div>
 
   <button type="submit" class="btn btn-default">Save</button>

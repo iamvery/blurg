@@ -16,7 +16,10 @@ defmodule Blurg.PostController do
   end
 
   def new(conn, _params) do
-    render(conn, "new.html")
+    changeset = Post.changeset(%Post{})
+    post_form = Data.PostForm.build(conn, changeset)
+    data = %{post_form: post_form}
+    render(conn, "new.html", data: data)
   end
 
   def edit(conn, %{"id" => id}) do
@@ -24,6 +27,22 @@ defmodule Blurg.PostController do
       post_link: [href: post_path(conn, :show, id)],
     }
     render(conn, "edit.html", data: data)
+  end
+
+  def create(conn, %{"post" => post_params}) do
+    changeset = Post.changeset(%Post{}, post_params)
+    case Repo.insert(changeset) do
+      {:ok, _post} ->
+        conn
+        |> put_flash(:info, "Post created")
+        |> redirect(to: post_path(conn, :index))
+      {:error, changeset} ->
+        post_form = Data.PostForm.build(conn, changeset)
+        data = %{post_form: post_form}
+        conn
+        |> put_flash(:error, "Failed to create post")
+        |> render("new.html", data: data)
+    end
   end
 
   def delete(conn, %{"id" => id}) do
