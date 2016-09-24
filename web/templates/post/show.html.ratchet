@@ -1,6 +1,8 @@
 <section>
   <h1>Bears</h1>
   <h5>Posted <span>1 day ago</span></h5>
+  <hr>
+
   <div>
     <p>
       Bears eat <em>beats.</em>
