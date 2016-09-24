@@ -17,7 +17,7 @@ defmodule Blurg.Data.Post do
     %{
       title: post.title,
       created_at: Timex.format!(post.inserted_at, "{relative}", :relative),
-      body: post.body,
+      body: Earmark.to_html(post.body) |> Phoenix.HTML.raw,
       edit_link: [href: post_path(conn, :edit, id)],
       delete_form: {
         %{
