@@ -40,6 +40,7 @@ defmodule Blurg.Mixfile do
      {:phoenix_ratchet, github: "iamvery/phoenix_ratchet"},
      {:gettext, "~> 0.11"},
      {:timex, "~> 3.0"},
+     {:earmark, "~> 1.0"},
      {:cowboy, "~> 1.0"}]
   end
 
