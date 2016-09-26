@@ -43,9 +43,10 @@
     <div data-prop="body">Did you mean beets?</div>
   </div>
 
-  <form class="form">
+  <form data-prop="comment_form" class="form">
+    <input data-prop="csrf" type="hidden">
     <div class="form-group">
-      <textarea class="form-control"></textarea>
+      <textarea data-prop="body" class="form-control"></textarea>
     </div>
 
     <button type="submit" class="btn btn-default">Add Comment</button>
