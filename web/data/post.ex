@@ -19,6 +19,13 @@ defmodule Blurg.Data.Post do
       created_at: Timex.format!(post.inserted_at, "{relative}", :relative),
       body: Earmark.to_html(post.body) |> Phoenix.HTML.raw,
       comment: post.comments,
+      comment_form: {
+        %{
+          csrf: [name: "_csrf_token", value: Phoenix.Controller.get_csrf_token],
+          body: [name: "comment[body]"],
+        },
+        action: post_comment_path(conn, :create, post), method: "post",
+      },
       edit_link: [href: post_path(conn, :edit, id)],
       delete_form: {
         %{
