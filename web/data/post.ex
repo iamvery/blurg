@@ -3,9 +3,12 @@ defmodule Blurg.Data.Post do
   import Blurg.Router.Helpers
 
   def build(conn, :index, _opts) do
-    Enum.map Blurg.Repo.all(Blurg.Post), fn post ->
+    # TODO this doesn't seem very idiomatic
+    posts = Blurg.Repo.all(Blurg.Post) |> Blurg.Repo.preload(:comments)
+    Enum.map posts, fn post ->
       %{
         title: post.title,
+        comment_count: post.comments |> length,
         show_link: [href: post_path(conn, :show, post)],
         edit_link: [href: post_path(conn, :edit, post)],
       }
