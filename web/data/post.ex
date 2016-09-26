@@ -21,7 +21,15 @@ defmodule Blurg.Data.Post do
       title: post.title,
       created_at: Timex.format!(post.inserted_at, "{relative}", :relative),
       body: Earmark.to_html(post.body) |> Phoenix.HTML.raw,
-      comment: post.comments,
+      comment: Enum.map(post.comments, &Map.merge(&1, %{
+        delete_form: {
+          %{
+            csrf: [name: "_csrf_token", value: Phoenix.Controller.get_csrf_token],
+            method: [name: "_method", value: "delete"],
+          },
+          action: post_comment_path(conn, :delete, id, &1.id), method: "post",
+        },
+      })),
       comment_form: {
         %{
           csrf: [name: "_csrf_token", value: Phoenix.Controller.get_csrf_token],
