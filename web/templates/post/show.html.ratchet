@@ -30,9 +30,9 @@
 
   <h3>Comments</h3>
   <div data-prop="comment" class="well well-sm">
-    <form class="pull-right">
-      <input type="hidden">
-      <input type="hidden">
+    <form data-prop="delete_form" class="pull-right">
+      <input data-prop="csrf" type="hidden">
+      <input data-prop="method" type="hidden">
       <button type="submit" class="btn btn-danger btn-xs">Delete</button>
     </form>
 
