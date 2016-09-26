@@ -11,7 +11,7 @@ defmodule Blurg.CommentController do
         conn
         |> put_flash(:info, "Comment created")
         |> redirect(to: post_path(conn, :show, post_id))
-      {:error, changeset} ->
+      {:error, _changeset} ->
         conn
         |> put_flash(:error, "Comment failed")
         |> redirect(to: post_path(conn, :show, post_id))
