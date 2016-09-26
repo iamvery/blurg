@@ -30,6 +30,12 @@
 
   <h3>Comments</h3>
   <div class="well well-sm">
+    <form class="pull-right">
+      <input type="hidden">
+      <input type="hidden">
+      <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+    </form>
+
     <div>
       <span><strong>Anonymous</strong></span>
       (<span>1 hour ago</span>)
