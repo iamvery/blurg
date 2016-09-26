@@ -17,4 +17,10 @@ defmodule Blurg.CommentController do
         |> redirect(to: post_path(conn, :show, post_id))
     end
   end
+
+  def delete(conn, %{"post_id" => post_id, "id" => id}) do
+    comment = Repo.get!(Comment, id)
+    Repo.delete!(comment)
+    redirect(conn, to: post_path(conn, :show, post_id))
+  end
 end
