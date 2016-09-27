@@ -36,6 +36,7 @@ defmodule Blurg.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:ratchet, github: "iamvery/ratchet", override: true},
      {:phoenix_ratchet, github: "iamvery/phoenix_ratchet"},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"}]

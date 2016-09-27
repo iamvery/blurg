@@ -11,7 +11,7 @@
   "mochiweb_html": {:hex, :mochiweb_html, "2.15.0", "d7402e967d7f9f2912f8befa813c37be62d5eeeddbbcb6fe986c44e01460d497", [:rebar3], []},
   "phoenix": {:hex, :phoenix, "1.2.1", "6dc592249ab73c67575769765b66ad164ad25d83defa3492dc6ae269bd2a68ab", [:mix], [{:cowboy, "~> 1.0", [hex: :cowboy, optional: true]}, {:phoenix_pubsub, "~> 1.0", [hex: :phoenix_pubsub, optional: false]}, {:plug, "~> 1.1", [hex: :plug, optional: false]}, {:poison, "~> 1.5 or ~> 2.0", [hex: :poison, optional: false]}]},
   "phoenix_ecto": {:hex, :phoenix_ecto, "3.0.1", "42eb486ef732cf209d0a353e791806721f33ff40beab0a86f02070a5649ed00a", [:mix], [{:ecto, "~> 2.0", [hex: :ecto, optional: false]}, {:phoenix_html, "~> 2.6", [hex: :phoenix_html, optional: true]}, {:plug, "~> 1.0", [hex: :plug, optional: false]}]},
-  "phoenix_html": {:hex, :phoenix_html, "2.6.2", "944a5e581b0d899e4f4c838a69503ebd05300fe35ba228a74439e6253e10e0c0", [:mix], [{:plug, "~> 1.0", [hex: :plug, optional: false]}]},
+  "phoenix_html": {:hex, :phoenix_html, "2.7.0", "19e12e2044340c2e43df206a06d059677c59ea1868bd1c35165438d592cd420b", [:mix], [{:plug, "~> 1.0", [hex: :plug, optional: false]}]},
   "phoenix_live_reload": {:hex, :phoenix_live_reload, "1.0.5", "829218c4152ba1e9848e2bf8e161fcde6b4ec679a516259442561d21fde68d0b", [:mix], [{:fs, "~> 0.9.1", [hex: :fs, optional: false]}, {:phoenix, "~> 1.0 or ~> 1.2-rc", [hex: :phoenix, optional: false]}]},
   "phoenix_pubsub": {:hex, :phoenix_pubsub, "1.0.0", "c31af4be22afeeebfaf246592778c8c840e5a1ddc7ca87610c41ccfb160c2c57", [:mix], []},
   "phoenix_ratchet": {:git, "https://github.com/iamvery/phoenix_ratchet.git", "3f765273151e781d305a8380d4a2f8f292a93f07", []},
@@ -20,4 +20,4 @@
   "poolboy": {:hex, :poolboy, "1.5.1", "6b46163901cfd0a1b43d692657ed9d7e599853b3b21b95ae5ae0a777cf9b6ca8", [:rebar], []},
   "postgrex": {:hex, :postgrex, "0.12.0", "bdeeb4c42768c47c3c92228e66c70357fe9a9384fbc9de06abba774b22dd0635", [:mix], [{:connection, "~> 1.0", [hex: :connection, optional: false]}, {:db_connection, "~> 1.0-rc.4", [hex: :db_connection, optional: false]}, {:decimal, "~> 1.0", [hex: :decimal, optional: false]}]},
   "ranch": {:hex, :ranch, "1.2.1", "a6fb992c10f2187b46ffd17ce398ddf8a54f691b81768f9ef5f461ea7e28c762", [:make], []},
-  "ratchet": {:hex, :ratchet, "0.3.3", "acf60170f6608ea5dc7e42775b2c90fbb4a3538fec2a1c488d716208a58857ab", [:mix], [{:floki, "~> 0.8", [hex: :floki, optional: false]}, {:phoenix_html, "~> 2.5", [hex: :phoenix_html, optional: false]}]}}
+  "ratchet": {:git, "https://github.com/iamvery/ratchet.git", "401675e82fcde4d2da11cf221839d7e182200df2", []}}
