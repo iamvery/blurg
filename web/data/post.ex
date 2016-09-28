@@ -9,8 +9,8 @@ defmodule Blurg.Data.Post do
       %{
         title: post.title,
         comment_count: post.comments |> length,
-        show_link: [href: post_path(conn, :show, post)],
-        edit_link: [href: post_path(conn, :edit, post)],
+        show_link: post_path(conn, :show, post) |> a,
+        edit_link: post_path(conn, :edit, post) |> a,
       }
     end
   end
@@ -22,29 +22,11 @@ defmodule Blurg.Data.Post do
       created_at: Timex.format!(post.inserted_at, "{relative}", :relative),
       body: Earmark.to_html(post.body) |> Phoenix.HTML.raw,
       comment: Enum.map(post.comments, &Map.merge(&1, %{
-        delete_form: {
-          %{
-            csrf: [name: "_csrf_token", value: Phoenix.Controller.get_csrf_token],
-            method: [name: "_method", value: "delete"],
-          },
-          action: post_comment_path(conn, :delete, id, &1.id), method: "post",
-        },
+        delete_form: post_comment_path(conn, :delete, id, &1.id) |> form("delete"),
       })),
-      comment_form: {
-        %{
-          csrf: [name: "_csrf_token", value: Phoenix.Controller.get_csrf_token],
-          body: [name: "comment[body]"],
-        },
-        action: post_comment_path(conn, :create, post), method: "post",
-      },
-      edit_link: [href: post_path(conn, :edit, id)],
-      delete_form: {
-        %{
-          csrf: [name: "_csrf_token", value: Phoenix.Controller.get_csrf_token],
-          method: [name: "_method", value: "delete"],
-        },
-        [action: post_path(conn, :delete, id), method: "post"],
-      },
+      comment_form: post_comment_path(conn, :create, post) |> form("post", %{body: [name: "comment[body]"]}),
+      edit_link: a(post_path(conn, :edit, id)),
+      delete_form: post_path(conn, :delete, id) |> form("delete"),
     }
   end
 end
