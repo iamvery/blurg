@@ -23,7 +23,11 @@ defmodule Blurg.PostController do
   end
 
   def edit(conn, %{"id" => id}) do
+    post = Repo.get!(Post, id)
+    changeset = Post.changeset(post)
+    post_form = Data.PostForm.build(conn, [post, changeset])
     data = %{
+      post_form: post_form,
       post_link: [href: post_path(conn, :show, id)],
     }
     render(conn, "edit.html", data: data)
@@ -42,6 +46,23 @@ defmodule Blurg.PostController do
         conn
         |> put_flash(:error, "Failed to create post")
         |> render("new.html", data: data)
+    end
+  end
+
+  def update(conn, %{"id" => id, "post" => post_params}) do
+    post = Repo.get!(Post, id)
+    changeset = Post.changeset(post, post_params)
+    case Repo.update(changeset) do
+      {:ok, _post} ->
+        conn
+        |> put_flash(:info, "Post updated")
+        |> redirect(to: post_path(conn, :show, post))
+      {:error, changeset} ->
+        post_form = Data.PostForm.build(conn, [post, changeset])
+        data = %{post_form: post_form}
+        conn
+        |> put_flash(:error, "Failed to update post")
+        |> render("edit.html", data: data)
     end
   end
 
