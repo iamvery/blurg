@@ -13,11 +13,12 @@ defmodule Blurg.Data.Post do
   end
 
   def build(%{params: %{"id" => id}} = conn, :show, _opts) do
-    post = Blurg.Repo.get!(Blurg.Post, id)
+    post = Blurg.Repo.get!(Blurg.Post, id) |> Blurg.Repo.preload(:comments)
     %{
       title: post.title,
       created_at: Timex.format!(post.inserted_at, "{relative}", :relative),
       body: Earmark.to_html(post.body) |> Phoenix.HTML.raw,
+      comment: post.comments,
       edit_link: [href: post_path(conn, :edit, id)],
       delete_form: {
         %{
